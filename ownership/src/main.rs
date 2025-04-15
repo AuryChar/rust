@@ -34,21 +34,36 @@
 // }
 
 // retorno de valores em escopo
+// fn main() {
+//     let s1 = entrega_valor();
+
+//     let s2 = String::from("text2");
+
+//     let s3 = pega_e_entrega_valor(s2);
+
+//     println!("{} {}", s3, s1);
+// }
+
+// fn entrega_valor() -> String {
+//     let uma_string = String::from("Text");
+//     uma_string
+// }
+
+// fn pega_e_entrega_valor(uma_string: String) -> String {
+//     uma_string
+// }
+
+//-----//
 fn main() {
-    let s1 = entrega_valor();
+    let s1 = String::from("texto");
 
-    let s2 = String::from("text2");
+    let (s2, size) = calcula_tamanho(s1);
 
-    let s3 = pega_e_entrega_valor(s2);
-
-    println!("{} {}", s3, s1);
+    println!("O tamanho de '{}' é {}", s2, size);
 }
 
-fn entrega_valor() -> String {
-    let uma_string = String::from("Text");
-    uma_string
-}
+fn calcula_tamanho(s: String) -> (String, usize) {
+    let tamanho = s.len();
 
-fn pega_e_entrega_valor(uma_string: String) -> String {
-    uma_string
+    (s, tamanho)
 }

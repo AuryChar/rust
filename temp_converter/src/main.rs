@@ -18,7 +18,6 @@ fn main() {
                 continue;
             }
         };
-
         match choice {
             1 => {
                 println!("Enter Temperature in Celsius");
