@@ -14,7 +14,7 @@ fn main() {
 
     let _cinco = cinco();
 
-    let sla1 = soma_um(1);
+    let sla1 = soma_um(5);
     println!("{}", sla1);
 
     println!("o valor de y é {}", y);
