@@ -1,8 +1,13 @@
 use std::io;
 
 fn main() {
+    let mut is_first = true;
     loop {
-        println!("Hii, here you can make your own loop!! \n");
+        if !is_first {
+            println!("okayy, let's gooo again");
+        } else {
+            println!("Hii, here you can make your own loop");
+        }
         return_fn();
         println!("First, write your message OwO");
         let mut loop_message = String::new();
@@ -12,7 +17,7 @@ fn main() {
         let mut loop_times = String::new();
         read_auto(&mut loop_times);
         let loop_times: u32 = match loop_times.trim().parse() {
-            Ok(num) => num,
+            Ok(u32) => u32,
             Err(_) => {
                 println!("Please, type a number");
                 return;
@@ -23,6 +28,8 @@ fn main() {
         read_auto(&mut th_num);
         let th_num = th_num.trim().to_uppercase();
         let value: bool;
+        println!("Yay are you ready??");
+        return_fn();
         match th_num.as_str() {
             "Y" => {
                 value = true;
@@ -36,8 +43,6 @@ fn main() {
                 println!("What?");
             }
         }
-        println!("yay, are you readyyy???");
-        return_fn();
 
         println!("yayy cool, do you want to do it again? \n[Y]. Yes \n[N]. No");
         let mut do_again = String::new();
@@ -45,6 +50,7 @@ fn main() {
         let do_again = do_again.trim().to_uppercase();
         match do_again.as_str() {
             "Y" => {
+                is_first = false;
                 return_fn();
                 continue;
             }
